@@ -4,12 +4,25 @@ http://neilpahl.com/logs/vim/
 
 Generally, I use The Pathogen plugin to manage my plugins, and I strongly reccomend you switch to using it too.
 
-The update_bundles script was written by Tammer Saleh, and published by him in his blog post which talks about why we should switch to Pathogen plugin for vim. The update_bundles script will update the vim pugins from their respective git repositories. You can modify that script to include/exclude your vim plugins which reside in ./bundle
+The update_bundles script was written by Tammer Saleh, and published by him in his blog post which talks about why we should switch to Pathogen plugin for vim:
+
+http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen
+
+His update_bundles script will remove plugins from the bundle folder, then grab the most updated version from their respective git repositories. You can modify that script to include/exclude your vim plugins which reside in ./bundle
 
 I have added scala support for exuberant-ctags by adding a .ctag file containing regex expressions found on 
 
 http://latestbuild.net/scala-ctags-and-vim-tagbar
 
-to add scala support to ctags, copy the .ctags file to ~/.ctags
+to add scala support to ctags, copy the .ctags file to ~/.ctags. 
+
+update_external_configs.sh will copy files such as .vimrc and .tags to their locations outside this folder. Be carefull that you don't overide your own settings.
+
+In the .vimrc, "set tags=/usr/share/scala/tags" loads the which I made from scala source. I made this by downloading the scala source files to /usr/share/scala/scala-source, then using exuberant-ctags, I did:
+
+    cd /usr/share/scala
+    tags -R *
+
+you can adjust this to suite your own scala locations.
 
 
