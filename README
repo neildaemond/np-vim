@@ -1,0 +1,15 @@
+This Repository holds everything in my ~/.vim folder. My work with vim is documented on my website at:
+
+http://neilpahl.com/logs/vim/
+
+Generally, I use The Pathogen plugin to manage my plugins, and I strongly reccomend you switch to using it too.
+
+The update_bundles script was written by Tammer Saleh, and published by him in his blog post which talks about why we should switch to Pathogen plugin for vim. The update_bundles script will update the vim pugins from their respective git repositories. You can modify that script to include/exclude your vim plugins which reside in ./bundle
+
+I have added scala support for exuberant-ctags by adding a .ctag file containing regex expressions found on 
+
+http://latestbuild.net/scala-ctags-and-vim-tagbar
+
+to add scala support to ctags, copy the .ctags file to ~/.ctags
+
+
