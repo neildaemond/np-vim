@@ -35,5 +35,5 @@ let g:tagbar_type_scala = {
     \ ]
 \ }
 
-"add tags files for scala source code tags,current folder, and up till root
-set tags=/usr/share/scala/tags,./tags;/
+"add tags from src code in /usr/local/src, current folder, and folders up until root. 'tags' file has been generated with 'ctags -R' using exuberant-ctags
+set tags=/usr/local/src/tags,./tags;/
