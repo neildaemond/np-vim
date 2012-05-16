@@ -18,6 +18,9 @@ nmap <F5> :TagbarToggle<CR>
 "to launch NERDTree with F6
 nmap <F6> :NERDTree<CR>
 
+"change to normal view then open new tab using t
+imap ,t <Esc>:tabnew<CR>
+
 "add scala support to tagbar
 let g:tagbar_type_scala = {
     \ 'ctagstype' : 'Scala',
