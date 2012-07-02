@@ -37,3 +37,6 @@ let g:tagbar_type_scala = {
 
 "add tags from src code in /usr/local/src, current folder, and folders up until root. 'tags' file has been generated with 'ctags -R' using exuberant-ctags
 set tags=/usr/local/src/tags,./tags;/
+
+"for autocomlpop plugin. tab button shoudl choose the longest match.
+:set completeopt=longest,menu,preview
