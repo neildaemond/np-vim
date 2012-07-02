@@ -38,6 +38,7 @@ git_bundles = [
 hg_bundles = [
 	"https://bitbucket.org/ns9tks/vim-autocomplpop",
 	"https://bitbucket.org/ns9tks/vim-l9/",
+
 ]
 
 vim_org_scripts = [
