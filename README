@@ -18,11 +18,11 @@ to add scala support to ctags, copy the .ctags file to ~/.ctags.
 
 update_external_configs.sh will copy files such as .vimrc and .tags to their locations outside this folder. Be carefull that you don't overide your own settings.
 
-In the .vimrc, "set tags=/usr/src/tags" loads the tags which I made from various source code kept in /usr/local/src. The 'tags' file is made using exuberant-ctags:
+In the .vimrc, "set tags=/usr/local/src/tags" loads the tags which I made from various source code kept in /usr/local/src. The 'tags' file is made using exuberant-ctags:
 
     cd /usr/local/src/
     tags -R *
 
-you can adjust this to suite your own source code locations.
+you can adjust this to suite your own source code locations. 
 
 
