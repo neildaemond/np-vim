@@ -24,5 +24,3 @@ In the .vimrc, "set tags=/usr/local/src/tags" loads the tags which I made from v
     tags -R *
 
 you can adjust this to suite your own source code locations. 
-
-
