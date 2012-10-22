@@ -6,37 +6,64 @@ call pathogen#helptags()
 " turn on autoindent
 set autoindent
 
-" enable filetypes. I think its needed for syntax highting.. maybe otherthings too
+"change tabs width from 8 to 4
+set tabstop=4
+
+" enable filetypes. I think its needed for syntax highting.. maybe otherthings too ( found haskell-mode to use it too)
 filetype plugin on
 
 " show Line numbers on left side
 set number
 
 "for tagbar plugin: to launch tagbar with F8
-nmap <F5> :TagbarToggle<CR>
+"nmap <F5> :TagbarToggle<CR>
 
 "to launch NERDTree with F6
 nmap <F6> :NERDTree<CR>
 
 "add scala support to tagbar
-let g:tagbar_type_scala = {
-    \ 'ctagstype' : 'Scala',
-    \ 'kinds'     : [
-        \ 'p:packages:1',
-        \ 'V:values',
-        \ 'v:variables',
-        \ 'T:types',
-        \ 't:traits',
-        \ 'o:objects',
-        \ 'a:aclasses',
-        \ 'c:classes',
-        \ 'r:cclasses',
-        \ 'm:methods'
-    \ ]
-\ }
+"let g:tagbar_type_scala = {
+    "\ 'ctagstype' : 'Scala',
+    "\ 'kinds'     : [
+        "\ 'p:packages:1',
+        "\ 'V:values',
+        "\ 'v:variables',
+        "\ 'T:types',
+        "\ 't:traits',
+        "\ 'o:objects',
+        "\ 'a:aclasses',
+        "\ 'c:classes',
+        "\ 'r:cclasses',
+        "\ 'm:methods'
+    "\ ]
+"\ }
 
 "add tags from src code in /usr/local/src, current folder, and folders up until root. 'tags' file has been generated with 'ctags -R' using exuberant-ctags
-set tags=/usr/local/src/tags,./tags;/
+"set tags=/usr/local/src/tags,./tags;/
 
 "for SuperTab with autocomlpop plugin. tab button twice should choose the longest match.
-:set completeopt=longest,menu,preview
+":set completeopt=longest,menu,preview
+
+"for haskell mode from http://projects.haskell.org/haskellmode-vim
+	"enable syntax highlighting
+	syntax on
+
+	"To use the features provided by the GHC |compiler| plugin
+	au BufEnter *.hs compiler ghc
+
+	"If the compiler plugin can't locate your GHC binary, or if you have
+	    "several versions of GHC installed and have a preference as to which binary
+		"is used, set |g:ghc|:
+		">
+			":let g:ghc="/usr/bin/ghc-6.6.1"
+
+	"The preferred HTML browser for viewing Haddock documentation can be set as
+	    "follows:
+	 :let g:haddock_browser="/usr/bin/firefox"
+    "Your system's installed Haddock documentation for GHC and its libraries
+    "should be automatically detected. If the plugin can't locate them, you
+    "must point |g:haddock_docdir| to the path containing the master index.html
+    "file for the subdirectories 'libraries', 'Cabal', 'users_guide', etc.:
+
+        ":let g:haddock_docdir="/usr/local/share/doc/ghc/html/"
+

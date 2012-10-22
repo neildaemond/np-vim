@@ -13,10 +13,12 @@ git_bundles = [
   "git://github.com/pangloss/vim-javascript.git",
   "git://github.com/scrooloose/nerdtree.git",
   "git://github.com/scrooloose/nerdcommenter.git",
-  "git://github.com/majutsushi/tagbar.git",
+  #"git://github.com/majutsushi/tagbar.git",
   "git://github.com/derekwyatt/vim-scala.git",
   "git://github.com/Shadowfiend/liftweb-vim.git",
-  "git://github.com/ervandew/supertab.git",
+  "git://github.com/lukerandall/haskellmode-vim.git",
+  "git://github.com/kana/vim-filetype-haskell.git" # for smarter indentation
+  #"git://github.com/ervandew/supertab.git",
   #"git://github.com/timcharper/textile.vim.git",
   #"git://github.com/tpope/vim-cucumber.git",
   #"git://github.com/tpope/vim-fugitive.git",
@@ -25,7 +27,7 @@ git_bundles = [
   #"git://github.com/tpope/vim-markdown.git",
   #"git://github.com/tpope/vim-rails.git",
   #"git://github.com/tpope/vim-repeat.git",
-  "git://github.com/tpope/vim-surround.git",
+  #"git://github.com/tpope/vim-surround.git",
   #"git://github.com/tpope/vim-vividchalk.git",
   #"git://github.com/tsaleh/taskpaper.vim.git",
   #"git://github.com/tsaleh/vim-matchit.git",
@@ -37,8 +39,8 @@ git_bundles = [
 ]
 
 hg_bundles = [
-	"https://bitbucket.org/ns9tks/vim-autocomplpop",
-	"https://bitbucket.org/ns9tks/vim-l9/",
+	#"https://bitbucket.org/ns9tks/vim-autocomplpop",
+	#"https://bitbucket.org/ns9tks/vim-l9/",
 
 ]
 
