@@ -14,6 +14,8 @@ git_bundles = [
   "git://github.com/scrooloose/nerdtree.git",
   "git://github.com/scrooloose/nerdcommenter.git",
   #"git://github.com/majutsushi/tagbar.git",
+  "git://github.com/vimoutliner/vimoutliner.git",
+  #"git://github.com/vim-scripts/TVO--The-Vim-Outliner.git",
   "git://github.com/derekwyatt/vim-scala.git",
   "git://github.com/Shadowfiend/liftweb-vim.git",
   "git://github.com/lukerandall/haskellmode-vim.git",
