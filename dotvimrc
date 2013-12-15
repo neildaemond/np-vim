@@ -9,9 +9,17 @@ set autoindent
 "change tabs width from 8 to 2
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 
-map <F2> :set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+map <F2> :set tabstop=2 shiftwidth=2 softtabstop=2 expandtab <CR>
 
-map <F4> :set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+map <F4> :set tabstop=4 shiftwidth=4 softtabstop=4 expandtab <CR>
+
+"only works if vim is built with python support
+map <F5> :ConqueTermSplit bash <CR>
+
+nnoremap th :tabnext<CR>
+nnoremap tl :tabprev<CR>
+nnoremap tn :tabnew<CR>
+nnoremap tc :tabclose<CR>
 
 " enable filetypes. I think its needed for syntax highting.. maybe otherthings too ( found haskell-mode to use it too)
 filetype plugin on
