@@ -15,7 +15,10 @@ git_bundles = [
   "git://github.com/scrooloose/nerdcommenter.git",
   #"git://github.com/majutsushi/tagbar.git",
   "git://github.com/vimoutliner/vimoutliner.git",
-  "git://github.com/rosenfeld/conque-term.git"
+  "git://github.com/rosenfeld/conque-term.git",
+  "https://github.com/kien/ctrlp.vim.git",
+  "https://github.com/tpope/vim-fugitive.git",
+  "git://github.com/jimenezrick/vimerl.git"
   #"git://github.com/vim-scripts/TVO--The-Vim-Outliner.git",
   #"git://github.com/derekwyatt/vim-scala.git",
   #"git://github.com/Shadowfiend/liftweb-vim.git",

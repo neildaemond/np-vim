@@ -2,16 +2,15 @@
 call pathogen#infect()
 call pathogen#helptags()
 
-
 " turn on autoindent
 set autoindent
 
 "change tabs width from 8 to 2
-set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 
-map <F2> :set tabstop=2 shiftwidth=2 softtabstop=2 expandtab <CR>
-
-map <F4> :set tabstop=4 shiftwidth=4 softtabstop=4 expandtab <CR>
+map <F2> :set tabstop=2 shiftwidth=2 softtabstop=2 expandtab <CR> :%retab! <CR>
+map <F3> :set noexpandtab <CR> :%retab! <CR>
+map <F4> :set tabstop=4 shiftwidth=4 softtabstop=4 expandtab <CR> :%retab <CR>
 
 "only works if vim is built with python support
 map <F5> :ConqueTermSplit bash <CR>
@@ -133,3 +132,4 @@ function! MD2VO()
   silent %d _
   call setline(1, lines)
 endfunction
+
