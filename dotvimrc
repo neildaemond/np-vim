@@ -133,3 +133,11 @@ function! MD2VO()
   call setline(1, lines)
 endfunction
 
+let g:alchemist#elixir_erlang_src = "~/src"
+
+" whitespacing for elixir filestypes
+autocmd Filetype elixir setlocal ts=2 sts=2 sw=2
+
+" use different swapfile location (you should create if if doesn't exist):
+:set directory=~/.vim/swapfiles//
+

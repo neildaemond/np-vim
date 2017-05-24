@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-# I fount this Ruby script at http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen
+# I found this Ruby script at http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen
 # It is written by Tammer Saleh
 # This script will retrieve the plugin bundles listed below from their (git?) repositories
 # It is to be used with vim's Pathogen plugin and git is reuired as well.
@@ -9,6 +9,7 @@ git_bundles = [
   #"git://github.com/ervandew/supertab.git",
   "git://github.com/godlygeek/tabular.git",
   #"git://github.com/hallison/vim-rdoc.git",
+  "https://github.com/lambdatoast/elm.vim.git",
   "git://github.com/msanders/snipmate.vim.git",
   "git://github.com/pangloss/vim-javascript.git",
   "git://github.com/scrooloose/nerdtree.git",
@@ -16,10 +17,9 @@ git_bundles = [
   #"git://github.com/majutsushi/tagbar.git",
   "git://github.com/vimoutliner/vimoutliner.git",
   "git://github.com/rosenfeld/conque-term.git",
-  "https://github.com/kien/ctrlp.vim.git",
-  "https://github.com/tpope/vim-fugitive.git",
-  "git://github.com/jimenezrick/vimerl.git",
-  "https://github.com/elixir-lang/vim-elixir.git"
+  "https://github.com/ctrlpvim/ctrlp.vim.git",
+  #"https://github.com/tpope/vim-fugitive.git",
+  #"git://github.com/jimenezrick/vimerl.git",
   #"git://github.com/vim-scripts/TVO--The-Vim-Outliner.git",
   #"git://github.com/derekwyatt/vim-scala.git",
   #"git://github.com/Shadowfiend/liftweb-vim.git",
@@ -42,6 +42,9 @@ git_bundles = [
   #"git://github.com/tsaleh/vim-tmux.git",
   #"git://github.com/vim-ruby/vim-ruby.git",
   #"git://github.com/vim-scripts/Gist.vim.git",
+  #"https://github.com/Valloric/YouCompleteMe.git",
+  "https://github.com/slashmili/alchemist.vim.git",
+  "https://github.com/elixir-lang/vim-elixir.git"
 ]
 
 hg_bundles = [
@@ -79,11 +82,11 @@ git_bundles.each do |url|
   FileUtils.rm_rf(File.join(dir, ".git"))
 end
 
-vim_org_scripts.each do |name, script_id, script_type|
-  puts "downloading #{name}"
-  local_file = File.join(name, script_type, "#{name}.vim")
-  FileUtils.mkdir_p(File.dirname(local_file))
-  File.open(local_file, "w") do |file|
-    file << open("http://www.vim.org/scripts/download_script.php?src_id=#{script_id}").read
-  end
-end
+#vim_org_scripts.each do |name, script_id, script_type|
+  #puts "downloading #{name}"
+  #local_file = File.join(name, script_type, "#{name}.vim")
+  #FileUtils.mkdir_p(File.dirname(local_file))
+  #File.open(local_file, "w") do |file|
+    #file << open("http://www.vim-scripts.org/scripts/download_script.php?src_id=#{script_id}").read
+  #end
+#end
