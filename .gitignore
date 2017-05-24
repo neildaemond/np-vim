@@ -1,2 +1,2 @@
-swapfiles/*
+swapfiles/*.sw*
 bundle/*
