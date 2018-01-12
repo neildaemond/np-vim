@@ -18,6 +18,7 @@ git_bundles = [
   "git://github.com/vimoutliner/vimoutliner.git",
   "git://github.com/rosenfeld/conque-term.git",
   "https://github.com/ctrlpvim/ctrlp.vim.git",
+  #"https://github.com/neowit/vim-force.com",
   #"https://github.com/tpope/vim-fugitive.git",
   #"git://github.com/jimenezrick/vimerl.git",
   #"git://github.com/vim-scripts/TVO--The-Vim-Outliner.git",

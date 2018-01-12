@@ -1,6 +1,4 @@
-This Repository holds everything in my ~/.vim folder. My work with vim is documented on my website at:
-
-http://neilpahl.com/logs/vim/
+This Repository holds everything in my ~/.vim folder.
 
 Generally, I use The Pathogen plugin to manage my plugins, and I strongly reccomend you switch to using it too.
 
