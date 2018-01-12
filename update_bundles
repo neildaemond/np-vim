@@ -2,14 +2,14 @@
 
 # I found this Ruby script at http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen
 # It is written by Tammer Saleh
-# This script will retrieve the plugin bundles listed below from their (git?) repositories
+# Tis script will retrieve the plugin bundles listed below from their (git?) repositories
 # It is to be used with vim's Pathogen plugin and git is reuired as well.
 git_bundles = [ 
   #"git://github.com/astashov/vim-ruby-debugger.git",
   #"git://github.com/ervandew/supertab.git",
   "git://github.com/godlygeek/tabular.git",
   #"git://github.com/hallison/vim-rdoc.git",
-  "https://github.com/lambdatoast/elm.vim.git",
+  #"https://github.com/lambdatoast/elm.vim.git",
   "git://github.com/msanders/snipmate.vim.git",
   "git://github.com/pangloss/vim-javascript.git",
   "git://github.com/scrooloose/nerdtree.git",
@@ -18,7 +18,7 @@ git_bundles = [
   "git://github.com/vimoutliner/vimoutliner.git",
   "git://github.com/rosenfeld/conque-term.git",
   "https://github.com/ctrlpvim/ctrlp.vim.git",
-  #"https://github.com/neowit/vim-force.com",
+  "https://github.com/neowit/vim-force.com",
   #"https://github.com/tpope/vim-fugitive.git",
   #"git://github.com/jimenezrick/vimerl.git",
   #"git://github.com/vim-scripts/TVO--The-Vim-Outliner.git",
@@ -44,8 +44,8 @@ git_bundles = [
   #"git://github.com/vim-ruby/vim-ruby.git",
   #"git://github.com/vim-scripts/Gist.vim.git",
   #"https://github.com/Valloric/YouCompleteMe.git",
-  "https://github.com/slashmili/alchemist.vim.git",
-  "https://github.com/elixir-lang/vim-elixir.git"
+  #"https://github.com/slashmili/alchemist.vim.git",
+  #"https://github.com/elixir-lang/vim-elixir.git"
 ]
 
 hg_bundles = [
