@@ -168,3 +168,9 @@ call neocomplete#util#set_default_dictionary(
 hi Pmenu ctermbg=6
 hi PmenuSel ctermbg=2
 hi PmenuSbar ctermbg=0
+
+" settings for gist-vim :
+" the following token/user are in plugin/github_api_token.vim
+"let g:github_token = "<my_personal_api_token_for_gists>"
+"let g:github_user = "<username>"
+let g:gist_clip_command = 'xclip -selection clipboard'

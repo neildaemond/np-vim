@@ -8,6 +8,7 @@ git_bundles = [
   #"git://github.com/astashov/vim-ruby-debugger.git",
   #"git://github.com/ervandew/supertab.git",
   "https://github.com/mattn/gist-vim.git",
+  "https://github.com/mattn/webapi-vim.git",
   "git://github.com/godlygeek/tabular.git",
   #"git://github.com/hallison/vim-rdoc.git",
   "https://github.com/ElmCast/elm-vim.git",
