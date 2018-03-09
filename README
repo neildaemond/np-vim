@@ -8,13 +8,14 @@ http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen
 
 His update_bundles script will remove plugins from the bundle folder, then grab the most updated version from their respective git repositories. You can modify that script to include/exclude your vim plugins which reside in ./bundle
 
-I have added scala support for exuberant-ctags by adding a .ctag file containing regex expressions found on 
-
-http://latestbuild.net/scala-ctags-and-vim-tagbar
-
-to add scala support to ctags, copy the .ctags file to ~/.ctags. 
-
-update_external_configs.sh will copy files such as .vimrc and .tags to their locations outside this folder. Be carefull that you don't overide your own settings.
+//no longer using scala... so ignore the following block
+//I have added scala support for exuberant-ctags by adding a .ctag file containing regex expressions found on 
+//
+//http://latestbuild.net/scala-ctags-and-vim-tagbar
+//
+//to add scala support to ctags, copy the .ctags file to ~/.ctags. 
+//
+//update_external_configs.sh will copy files such as .vimrc and .tags to their locations outside this folder. Be carefull that you don't overide your own settings.
 
 In the .vimrc, "set tags=/usr/local/src/tags" loads the tags which I made from various source code kept in /usr/local/src. The 'tags' file is made using exuberant-ctags:
 
@@ -22,3 +23,8 @@ In the .vimrc, "set tags=/usr/local/src/tags" loads the tags which I made from v
     tags -R *
 
 you can adjust this to suite your own source code locations. 
+
+I've started using neocomplete for elm development, but that requires vim to be compiled with lua. To install vim that is compiled with lua and other goodies, see https://gist.github.com/neildaemond/1fb83611a84c4ea19ec1fd462e47d081
+
+Otherwise, you'll have to comment out the neocomplete related items in .vimrc
+

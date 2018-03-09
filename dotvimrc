@@ -2,6 +2,7 @@
 call pathogen#infect()
 call pathogen#helptags()
 
+
 " turn on autoindent
 set autoindent
 
@@ -141,3 +142,29 @@ autocmd Filetype elixir setlocal ts=2 sts=2 sw=2
 " use different swapfile location (you should create if if doesn't exist):
 :set directory=~/.vim/swapfiles//
 
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#enable_auto_select = 1
+
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "<Down>" : "\<TAB>"
+inoremap <expr><S-TAB>  pumvisible() ? neocomplete#smart_close_popup() : "\<TAB>"
+inoremap <expr><BS>  pumvisible() ?  neocomplete#smart_close_popup()."<C-h>".neocomplete#start_manual_complete() : "\<BS>"
+inoremap <expr><CR>  pumvisible() ? "<C-y>" : "\<CR>"
+
+call neocomplete#util#set_default_dictionary(
+  \ 'g:neocomplete#sources#omni#input_patterns',
+  \ 'elm',
+  \ '\.')
+
+:set backspace=indent,eol,start
+
+" Popup color.
+hi Pmenu ctermbg=6
+hi PmenuSel ctermbg=2
+hi PmenuSbar ctermbg=0

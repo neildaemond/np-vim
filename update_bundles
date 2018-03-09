@@ -7,15 +7,15 @@
 git_bundles = [ 
   #"git://github.com/astashov/vim-ruby-debugger.git",
   #"git://github.com/ervandew/supertab.git",
+  "https://github.com/mattn/gist-vim.git",
   "git://github.com/godlygeek/tabular.git",
   #"git://github.com/hallison/vim-rdoc.git",
-  "https://github.com/lambdatoast/elm.vim.git",
-  "git://github.com/msanders/snipmate.vim.git",
+  "https://github.com/ElmCast/elm-vim.git",
   "git://github.com/pangloss/vim-javascript.git",
   "git://github.com/scrooloose/nerdtree.git",
   "git://github.com/scrooloose/nerdcommenter.git",
   #"git://github.com/majutsushi/tagbar.git",
-  "git://github.com/vimoutliner/vimoutliner.git",
+  #"git://github.com/vimoutliner/vimoutliner.git",
   "git://github.com/rosenfeld/conque-term.git",
   "https://github.com/ctrlpvim/ctrlp.vim.git",
   #"https://github.com/neowit/vim-force.com",
@@ -44,6 +44,7 @@ git_bundles = [
   #"git://github.com/vim-ruby/vim-ruby.git",
   #"git://github.com/vim-scripts/Gist.vim.git",
   #"https://github.com/Valloric/YouCompleteMe.git",
+  "https://github.com/Shougo/neocomplete.vim.git",
   "https://github.com/slashmili/alchemist.vim.git",
   "https://github.com/elixir-lang/vim-elixir.git"
 ]
@@ -69,12 +70,12 @@ FileUtils.cd(bundles_dir)
 puts "trashing everything (lookout!)"
 Dir["*"].each {|d| FileUtils.rm_rf d }
 
-hg_bundles.each do |url|
-  dir = url.split('/').last.sub(/\.hg$/, '')
-  puts "unpacking #{url} into #{dir}"
-  `hg clone #{url} #{dir}`
-  FileUtils.rm_rf(File.join(dir, ".hg"))
-end
+#hg_bundles.each do |url|
+#  dir = url.split('/').last.sub(/\.hg$/, '')
+#  puts "unpacking #{url} into #{dir}"
+#  `hg clone #{url} #{dir}`
+#  FileUtils.rm_rf(File.join(dir, ".hg"))
+#end
 
 git_bundles.each do |url|
   dir = url.split('/').last.sub(/\.git$/, '')
