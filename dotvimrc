@@ -1,6 +1,33 @@
 " the folowing is for the pathogen Pluglin, pathogen.vim, located at ~/.vim/autoload/pathogen.vim
-call pathogen#infect()
-call pathogen#helptags()
+
+
+call plug#begin()
+
+Plug 'tpope/vim-sensible'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Plug 'mattn/gist-vim'
+" Plug 'mattn/webapi-vim'
+" Plug 'godlygeek/tabular'
+" Plug 'ctrlpvim/ctrlp.vim'
+
+Plug 'lervag/vimtex'
+Plug 'pangloss/vim-javascript'
+Plug 'slashmili/alchemist.vim'
+Plug 'elixir-lang/vim-elixir'
+Plug 'sheerun/vim-polyglot'    
+Plug 'rosenfeld/conque-term'
+
+"Plug 'Shougo/neocomplete.vim'
+
+call plug#end()
+
+
+
+" use different swapfile location (you should create if if doesn't exist):
+:set directory=~/.vim/swapfiles//
 
 
 " turn on autoindent
@@ -24,153 +51,155 @@ nnoremap tc :tabclose<CR>
 " enable filetypes. I think its needed for syntax highting.. maybe otherthings too ( found haskell-mode to use it too)
 filetype plugin on
 
+
 " show Line numbers on left side
 set number
-
-"for tagbar plugin: to launch tagbar with F8
-"nmap <F5> :TagbarToggle<CR>
 
 "to launch NERDTree with F6
 nmap <F6> :NERDTree<CR>
 
-"add scala support to tagbar
-"let g:tagbar_type_scala = {
-    "\ 'ctagstype' : 'Scala',
-    "\ 'kinds'     : [
-        "\ 'p:packages:1',
-        "\ 'V:values',
-        "\ 'v:variables',
-        "\ 'T:types',
-        "\ 't:traits',
-        "\ 'o:objects',
-        "\ 'a:aclasses',
-        "\ 'c:classes',
-        "\ 'r:cclasses',
-        "\ 'm:methods'
-    "\ ]
-"\ }
 
-"add tags from src code in /usr/local/src, current folder, and folders up until root. 'tags' file has been generated with 'ctags -R' using exuberant-ctags
-"set tags=/usr/local/src/tags,./tags;/
-
-"for SuperTab with autocomlpop plugin. tab button twice should choose the longest match.
-":set completeopt=longest,menu,preview
-
-"for haskell mode from http://projects.haskell.org/haskellmode-vim
-	"enable syntax highlighting
-	syntax on
-
-	"To use the features provided by the GHC |compiler| plugin
-	au BufEnter *.hs compiler ghc
-
-	"If the compiler plugin can't locate your GHC binary, or if you have
-	    "several versions of GHC installed and have a preference as to which binary
-		"is used, set |g:ghc|:
-		">
-			":let g:ghc="/usr/bin/ghc-6.6.1"
-
-	"The preferred HTML browser for viewing Haddock documentation can be set as
-	    "follows:
-	 :let g:haddock_browser="/usr/bin/firefox"
-    "Your system's installed Haddock documentation for GHC and its libraries
-    "should be automatically detected. If the plugin can't locate them, you
-    "must point |g:haddock_docdir| to the path containing the master index.html
-    "file for the subdirectories 'libraries', 'Cabal', 'users_guide', etc.:
-
-        ":let g:haddock_docdir="/usr/local/share/doc/ghc/html/"
+"        "for haskell mode from http://projects.haskell.org/haskellmode-vim
+"           "enable syntax highlighting
+"           syntax on
+"        
+"           "To use the features provided by the GHC |compiler| plugin
+"           au BufEnter *.hs compiler ghc
+"        
+"           "If the compiler plugin can't locate your GHC binary, or if you have
+"                   "several versions of GHC installed and have a preference as to which binary
+"               "is used, set |g:ghc|:
+"               ">
+"                   ":let g:ghc="/usr/bin/ghc-6.6.1"
+"        
+"           "The preferred HTML browser for viewing Haddock documentation can be set as
+"                   "follows:
+"            :let g:haddock_browser="/usr/bin/firefox"
+"                "Your system's installed Haddock documentation for GHC and its libraries
+"                "should be automatically detected. If the plugin can't locate them, you
+"                "must point |g:haddock_docdir| to the path containing the master index.html
+"                "file for the subdirectories 'libraries', 'Cabal', 'users_guide', etc.:
+"        
+"                        ":let g:haddock_docdir="/usr/local/share/doc/ghc/html/"
 
 func! WordProcessorMode() 
-  setlocal formatoptions=1 
-  setlocal noexpandtab 
-  map j gj 
-  map k gk
-  setlocal spell spelllang=en_us 
-  "set thesaurus+=/Users/sbrown/.vim/thesaurus/mthesaur.txt
-  set complete+=s
-  set formatprg=par
-  setlocal wrap 
-  setlocal linebreak 
+    setlocal formatoptions=1 
+    setlocal noexpandtab 
+    map j gj 
+    map k gk
+    setlocal spell spelllang=en_us 
+    "set thesaurus+=/Users/sbrown/.vim/thesaurus/mthesaur.txt
+    set complete+=s
+    set formatprg=par
+    setlocal wrap 
+    setlocal linebreak 
 endfu 
 com! WP call WordProcessorMode()
 
 "to covert vimoutliner .otl to markdown using 'call VO2MD()' and back with
 "'call MD2VO()'
 
-function! VO2MD()
-  let lines = []
-  let was_body = 0
-  for line in getline(1,'$')
-    if line =~ '^\t*[^:\t]'
-      let indent_level = len(matchstr(line, '^\t*'))
-      if was_body " <= remove this line to have body lines separated
-        call add(lines, '')
-      endif " <= remove this line to have body lines separated
-      call add(lines, substitute(line, '^\(\t*\)\([^:\t].*\)', '\=repeat("#", indent_level + 1)." ".submatch(2)', ''))
-      call add(lines, '')
-      let was_body = 0
-    else
-      call add(lines, substitute(line, '^\t*: ', '', ''))
-      let was_body = 1
-    endif
-  endfor
-  silent %d _
-  call setline(1, lines)
-endfunction
+"       function! VO2MD()
+"           let lines = []
+"           let was_body = 0
+"           for line in getline(1,'$')
+"               if line =~ '^\t*[^:\t]'
+"                   let indent_level = len(matchstr(line, '^\t*'))
+"                   if was_body " <= remove this line to have body lines separated
+"                       call add(lines, '')
+"                   endif " <= remove this line to have body lines separated
+"                   call add(lines, substitute(line, '^\(\t*\)\([^:\t].*\)', '\=repeat("#", indent_level + 1)." ".submatch(2)', ''))
+"                   call add(lines, '')
+"                   let was_body = 0
+"               else
+"                   call add(lines, substitute(line, '^\t*: ', '', ''))
+"                   let was_body = 1
+"               endif
+"           endfor
+"           silent %d _
+"           call setline(1, lines)
+"       endfunction
+"       
+"       function! MD2VO()
+"           let lines = []
+"           for line in getline(1,'$')
+"               if line =~ '^\s*$'
+"                   continue
+"               endif
+"               if line =~ '^#\+'
+"                   let indent_level = len(matchstr(line, '^#\+')) - 1
+"                   call add(lines, substitute(line, '^#\(#*\) ', repeat("\<Tab>", indent_level), ''))
+"               else
+"                   call add(lines, substitute(line, '^', repeat("\<Tab>", indent_level) . ': ', ''))
+"               endif
+"           endfor
+"           silent %d _
+"           call setline(1, lines)
+"       endfunction
 
-function! MD2VO()
-  let lines = []
-  for line in getline(1,'$')
-    if line =~ '^\s*$'
-      continue
-    endif
-    if line =~ '^#\+'
-      let indent_level = len(matchstr(line, '^#\+')) - 1
-      call add(lines, substitute(line, '^#\(#*\) ', repeat("\<Tab>", indent_level), ''))
-    else
-      call add(lines, substitute(line, '^', repeat("\<Tab>", indent_level) . ': ', ''))
-    endif
-  endfor
-  silent %d _
-  call setline(1, lines)
-endfunction
+"       let g:alchemist#elixir_erlang_src = "~/src"
+"       
+"       " whitespacing for elixir filestypes
+"       autocmd Filetype elixir setlocal ts=2 sts=2 sw=2
 
-let g:alchemist#elixir_erlang_src = "~/src"
 
-" whitespacing for elixir filestypes
-autocmd Filetype elixir setlocal ts=2 sts=2 sw=2
-
-" use different swapfile location (you should create if if doesn't exist):
-:set directory=~/.vim/swapfiles//
-
-let g:acp_enableAtStartup = 0
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#enable_auto_select = 1
-
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "<Down>" : "\<TAB>"
-inoremap <expr><S-TAB>  pumvisible() ? neocomplete#smart_close_popup() : "\<TAB>"
-inoremap <expr><BS>  pumvisible() ?  neocomplete#smart_close_popup()."<C-h>".neocomplete#start_manual_complete() : "\<BS>"
-inoremap <expr><CR>  pumvisible() ? "<C-y>" : "\<CR>"
-
-call neocomplete#util#set_default_dictionary(
-  \ 'g:neocomplete#sources#omni#input_patterns',
-  \ 'elm',
-  \ '\.')
-
-:set backspace=indent,eol,start
-
-" Popup color.
-hi Pmenu ctermbg=6
-hi PmenuSel ctermbg=2
-hi PmenuSbar ctermbg=0
+"       " autocomplpop
+"       let g:acp_enableAtStartup = 0
+"       
+"       " Use neocomplete.
+"       let g:neocomplete#enable_at_startup = 1
+"       " Use smartcase.
+"       let g:neocomplete#enable_smart_case = 1
+"       " Set minimum syntax keyword length.
+"       let g:neocomplete#sources#syntax#min_keyword_length = 3
+"       let g:neocomplete#enable_auto_select = 1
+"       
+"       " <TAB>: completion.
+"       inoremap <expr><TAB>    pumvisible() ? "<Down>" : "\<TAB>"
+"       inoremap <expr><S-TAB>  pumvisible() ? neocomplete#smart_close_popup() : "\<TAB>"
+"       inoremap <expr><BS>  pumvisible() ?  neocomplete#smart_close_popup()."<C-h>".neocomplete#start_manual_complete() : "\<BS>"
+"       inoremap <expr><CR>  pumvisible() ? "<C-y>" : "\<CR>"
+"       
+"       call neocomplete#util#set_default_dictionary(
+"           \ 'g:neocomplete#sources#omni#input_patterns',
+"           \ 'elm',
+"           \ '\.')
+"       
+"       :set backspace=indent,eol,start
+"       
+"       " Popup color.
+"       hi Pmenu ctermbg=6
+"       hi PmenuSel ctermbg=2
+"       hi PmenuSbar ctermbg=0
 
 " settings for gist-vim :
 " the following token/user are in plugin/github_api_token.vim
 "let g:github_token = "<my_personal_api_token_for_gists>"
 "let g:github_user = "<username>"
-let g:gist_clip_command = 'xclip -selection clipboard'
+
+"    let g:gist_clip_command = 'xclip -selection clipboard'
+"
+"
+
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+
+
+

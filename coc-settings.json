@@ -1,0 +1,29 @@
+{
+        "languageserver": {
+        "bash": {
+          "command": "bash-language-server",
+          "args": ["start"],
+          "filetypes": ["sh"],
+          "ignoredRootPaths": ["~"]
+        }
+      },
+    "languageserver": {
+    "elmLS": {
+      "command": "elm-language-server",
+      "args": ["--stdio"],
+      "filetypes": ["elm"],
+      "rootPatterns": ["elm.json"],
+      "initializationOptions": {
+        "runtime": "node",
+        "elmPath": "elm",
+        "elmFormatPath": "elm-format",
+        "elmTestPath": "elm-test"
+      }
+    }
+  },
+  "suggest.snippetIndicator": "►",
+  "suggest.noselect": false
+
+
+
+}
