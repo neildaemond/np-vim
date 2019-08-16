@@ -1,12 +1,16 @@
 This Repository holds everything in my ~/.vim folder.
 
-Generally, I use The Pathogen plugin to manage my plugins, and I strongly reccomend you switch to using it too.
+I've migrated over to using Plug to manage vim plugins and coc-nvim to provide intellisense via Language Servers using LSP. To use them, however, I've had to use vim >= 8.1 which required me to build it from source.
 
-The update_bundles script was written by Tammer Saleh, and published by him in his blog post which talks about why we should switch to Pathogen plugin for vim:
 
-http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen
 
-His update_bundles script will remove plugins from the bundle folder, then grab the most updated version from their respective git repositories. You can modify that script to include/exclude your vim plugins which reside in ./bundle
+// Generally, I use The Pathogen plugin to manage my plugins, and I strongly reccomend you switch to using it too.
+// 
+// The update_bundles script was written by Tammer Saleh, and published by him in his blog post which talks about why we should switch to Pathogen plugin for vim:
+// 
+// http://tammersaleh.com/posts/the-modern-vim-config-with-pathogen
+// 
+// His update_bundles script will remove plugins from the bundle folder, then grab the most updated version from their respective git repositories. You can modify that script to include/exclude your vim plugins which reside in ./bundle
 
 //no longer using scala... so ignore the following block
 //I have added scala support for exuberant-ctags by adding a .ctag file containing regex expressions found on 
@@ -17,14 +21,14 @@ His update_bundles script will remove plugins from the bundle folder, then grab 
 //
 //update_external_configs.sh will copy files such as .vimrc and .tags to their locations outside this folder. Be carefull that you don't overide your own settings.
 
-In the .vimrc, "set tags=/usr/local/src/tags" loads the tags which I made from various source code kept in /usr/local/src. The 'tags' file is made using exuberant-ctags:
-
-    cd /usr/local/src/
-    tags -R *
-
-you can adjust this to suite your own source code locations. 
-
-I've started using neocomplete for elm development, but that requires vim to be compiled with lua. To install vim that is compiled with lua and other goodies, see https://gist.github.com/neildaemond/1fb83611a84c4ea19ec1fd462e47d081
-
-Otherwise, you'll have to comment out the neocomplete related items in .vimrc
+// In the .vimrc, "set tags=/usr/local/src/tags" loads the tags which I made from various source code kept in /usr/local/src. The 'tags' file is made using exuberant-ctags:
+// 
+//     cd /usr/local/src/
+//     tags -R *
+// 
+// you can adjust this to suite your own source code locations. 
+// 
+// I've started using neocomplete for elm development, but that requires vim to be compiled with lua. To install vim that is compiled with lua and other goodies, see https://gist.github.com/neildaemond/1fb83611a84c4ea19ec1fd462e47d081
+// 
+// Otherwise, you'll have to comment out the neocomplete related items in .vimrc
 
