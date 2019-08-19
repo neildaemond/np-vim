@@ -2,7 +2,47 @@ This Repository holds everything in my ~/.vim folder.
 
 I've migrated over to using Plug to manage vim plugins and coc-nvim to provide intellisense via Language Servers using LSP. To use them, however, I've had to use vim >= 8.1 which required me to build it from source.
 
+for coc.nvim:
 
+ Install base set of coc.nvim plugins with the install_coc_extensions.sh extensitons included:
+    (found from https://www.npmjs.com/search?q=keywords%3Acoc.nvim&page=1&perPage=20)
+    coc-python
+    coc-phpls
+    coc-html
+    coc-json
+    coc-gitignore
+    coc-java
+    coc-xml
+    coc-sh
+    coc-elixir
+    coc-prettier
+    coc-tsserver
+    coc-snippet
+
+    Note: ** check extestion status with 
+
+
+ coc-settings.json is configured to allow the following external language servers:
+    
+    Elm(https://github.com/elm-tooling/elm-language-server):
+        // pre-req
+        npm install -g elm elm-test elm-format
+        // install language server
+        npm install -g @elm-tooling/elm-language-server
+
+    Scala
+        //needs metals 
+        // see Not yet supporting Scala 2.12.9 for all features: see https://github.com/scalameta/metals/issues/856
+
+
+
+    
+
+
+
+
+
+Pre-migration setup:
 
 // Generally, I use The Pathogen plugin to manage my plugins, and I strongly reccomend you switch to using it too.
 // 
