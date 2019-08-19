@@ -21,22 +21,23 @@ vim -c 'CocInstall -sync coc-gitignore|q' > /dev/null
 echo "Done."
 echo "Installing coc-java ..."
 vim -c 'CocInstall -sync coc-java|q' > /dev/null
+echo "**NOTE** Be sure to have jdk installed, then set 'java.home' in the coc-settings.json file"
 echo "Done."
 echo "Installing coc-xml ..."
 vim -c 'CocInstall -sync coc-xml|q' > /dev/null
 echo "Done."
-echo "Installing coc-sh ..."
-vim -c 'CocInstall -sync coc-sh|q' > /dev/null
-echo "Done."
+#echo "Installing coc-sh ..."
+#vim -c 'CocInstall -sync coc-sh|q' > /dev/null
+#echo "Done."
 echo "Installing coc-elixir ..."
 vim -c 'CocInstall -sync coc-elixir|q' > /dev/null
 echo "Done."
 echo "Installing coc-prettier ..."
 vim -c 'CocInstall -sync coc-prettier|q' > /dev/null
 echo "Done."
-echo "Installing coc-tsserver ..."
-vim -c 'CocInstall -sync coc-tsserver|q' > /dev/null
-echo "Done."
-echo "Installing coc-snippets ..."
-vim -c 'CocInstall -sync coc-tsserver|q' > /dev/null
-echo "Done."
+#echo "Installing coc-tsserver ..."
+#vim -c 'CocInstall -sync coc-tsserver|q' > /dev/null
+#echo "Done."
+#echo "Installing coc-snippets ..."
+#vim -c 'CocInstall -sync coc-tsserver|q' > /dev/null
+#echo "Done."

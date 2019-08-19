@@ -22,5 +22,7 @@
   },
   "coc.preferences.formatOnSaveFiletypes": ["css", "Markdown", "javascript", "Javascriptreact", "typescript", "typescriptreact" ],
     // make vim select first item on completion
-  "suggest.noselect": false
+  "suggest.noselect": false,
+  "java.home": "/usr/lib/jvm/java-8-openjdk-amd64"
+
 }
