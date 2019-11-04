@@ -21,6 +21,7 @@ for coc.nvim:
 
     Note: ** check extestion status with 
 
+ extensions can be managed according to: https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions
 
  coc-settings.json is configured to allow the following external language servers:
     
