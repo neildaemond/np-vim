@@ -19,7 +19,7 @@ Plug 'slashmili/alchemist.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'sheerun/vim-polyglot'    
 Plug 'rosenfeld/conque-term'
-Plug 'ElmCast/elm-vim'
+" Plug 'ElmCast/elm-vim'
 
 "Plug 'Shougo/neocomplete.vim'
 
@@ -216,7 +216,7 @@ set updatetime=300
 set shortmess+=c
 
 " always show signcolumns
-set signcolumn=yes
+" set signcolumn=yes
 
 " Some server have issues with backup files, see #649
 set nobackup
