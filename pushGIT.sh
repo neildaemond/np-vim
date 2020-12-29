@@ -4,7 +4,7 @@
 
 #copy dot external dot files into git project
 cp ~/.vimrc ~/.vim/dotvimrc
-cp ~/.ctags ~/.vim/dotctags
+# cp ~/.ctags ~/.vim/dotctags
 
 git add *
 git commit -m "$1"

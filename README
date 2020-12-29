@@ -1,10 +1,12 @@
 This Repository holds everything in my ~/.vim folder.
 
-I've migrated over to using Plug to manage vim plugins and coc-nvim to provide intellisense via Language Servers using LSP. To use them, however, I've had to use vim >= 8.1 which required me to build it from source.
+I've migrated over to using Plug to manage vim plugins and coc-nvim to provide intellisense via Language Servers using LSP. To use them, however, I've had to use vim >= 8.1 which required me to build it from source. Newer distro versions seem to have a vim package with Version 8+
 
-for coc.nvim:
+After installing, be sure to run `:PlugInstall` in vim to first install the vim plugins chosen in `.vimrc`
 
- Install base set of coc.nvim plugins with the install_coc_extensions.sh extensitons included:
+Then, proceed with setting up coc.vim:
+
+Install base set of coc.nvim plugins with the install_coc_extensions.sh extensitons included:
     (found from https://www.npmjs.com/search?q=keywords%3Acoc.nvim&page=1&perPage=20)
     coc-python
     coc-phpls
