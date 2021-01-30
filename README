@@ -6,9 +6,9 @@ After installing, be sure to run `:PlugInstall` in vim to first install the vim 
 
 Then, proceed with setting up coc.vim:
 
-Install base set of coc.nvim plugins with the install_coc_extensions.sh extensitons included:
+I've commented out all my common coc extensions in install_coc_extensions.sh. Just uncomment the ones you want, then install those coc.nvim plugins by running the install_coc_extensions.sh file. My usuall coc-plugins included are:
     (found from https://www.npmjs.com/search?q=keywords%3Acoc.nvim&page=1&perPage=20)
-    coc-python
+    coc-pyright (for python3)
     coc-phpls
     coc-html
     coc-json

@@ -22,6 +22,10 @@ Plug 'rosenfeld/conque-term'
 " Plug 'ElmCast/elm-vim'
 
 "Plug 'Shougo/neocomplete.vim'
+"
+"
+Plug 'nvie/vim-flake8'
+Plug 'Chiel92/vim-autoformat'
 
 call plug#end()
 
@@ -279,5 +283,6 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+noremap <F3> :Autoformat<CR>
 
 
